@@ -16,7 +16,7 @@ SARS-CoV-2, the causative agent of coronavirus disease 2019 (COVID-19), is respo
 Large numbers of patients with COVID-19 related critical illness (CRCI) requiring ICU care has placed considerable strain on Ontario’s critical care system. To expand ICU capacity, several strategies were employed including using ward beds to care for non-ventilated CRCI patients on high fractions of inspired oxygen and identifying non-traditional spaces for ICU surge capacity. Nurse to patient ratios were increased and redeployed nurses worked in team-based models of care overseen by a critical care nurse (Ontario COVID-19 Science Advisory Table, 2021).
 Given the importance of ICU capacity and allocation of medical resources, this report utilizes open-access data from OpenDataToronto to analyze how insufficient medical resources impact on the mortality of COVID-19 patients in Toronto, with regards to three factors including age group, source of infection and geographical factors. 
 
-The data is processed by R (R Core Team, 2022) and read by readr (Wickham et al., 2021) and opendatatoronto (Gelfand, 2020) packages. The package dplyr (Wickham et al., 2021) is used in the majority part of analysis. The package knitr (Xie, 2021) and kableExtra (Zhu, 2021) contributed to table plotting while the figures were plotted by the packages including ggplot2 (Wickham, 2016), reshape2 (Wickham, 2007), tmap (Tennekes, 2018), maptools (Bivand & Lewin-Koh., 2021), rgeos (Bivand & Rundel., 2021) and ggmap (Kahle & Wickham., 2013). Package magrittr (Bache & Wickham, 2020), janitor (Firke, 2021), plotfunctions (Rij, 2020) and tinytex (Xie, 2021) helped knitting the report to pdf and have other minor functions. ^[This sentence will be printed as a footnote.]
+The data is processed by R (R Core Team, 2022) and read by readr (Wickham et al., 2021) and opendatatoronto (Gelfand, 2020) packages. The package dplyr (Wickham et al., 2021) is used in the majority part of analysis. The package knitr (Xie, 2016) and kableExtra (Zhu, 2021) contributed to table plotting while the figures were plotted by the packages including ggplot2 (Wickham, 2016), reshape2 (Wickham, 2007), tmap (Tennekes, 2018), maptools (Bivand & Lewin-Koh., 2021), rgeos (Bivand & Rundel., 2021) and ggmap (Kahle & Wickham., 2013). Package magrittr (Bache & Wickham, 2020), janitor (Firke, 2021), plotfunctions (Rij, 2020) and tinytex (Xie, 2021) helped knitting the report to pdf and have other minor functions. ^[Code and data are available at: https://github.com/jianglai8/Tao]
 ```{r, message=FALSE, echo=FALSE}
 # load libraries
 library(magrittr)
@@ -282,7 +282,7 @@ palette(p)
 icu1 <- as.numeric(sh2@data$n)
 cols <- (icu1 - min(icu1))/diff(range(icu1))*127+1
 # plot the map and add a gradient legend
-plot(sh2, col=cols, main = "Table 1: ")
+plot(sh2, col=cols, main = "Figure 3: Toronto neighbourhoods with regard to the number of ICU patients")
 gradientLegend(valRange = c(0, 81), color = p, side = 1)
 
 ```
