@@ -16,7 +16,7 @@ Data about COVID-19 cases in Toronto, extracted from OpenDataToronto is utilized
     (2.6) Geographical Divisions
 (3) Conclusion
 
-4. Installation:
+4.Installation:
 (1) Install R
 (2) Install packages required
 
