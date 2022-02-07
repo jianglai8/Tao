@@ -42,7 +42,6 @@ library(plotfunctions)
 library(knitr)
 library(tinytex)
 library(kableExtra)
-library(bookdown)
 ```
 # 2 Data
 ## 2.1 Data Source
@@ -271,6 +270,7 @@ neighbourhood_name	==	"Guildwood"	~	140))
 
 ```
 ```{r map, echo=FALSE, warning=FALSE}
+# reference wbsite for the following code: https://everydayanalytics.ca/2016/03/plotting-choropleths-from-shapefiles-in-r-with-ggmap-toronto-neighbourhoods-by-population.html
 # convert the neighbourhood id from shape file to numeric
 sh@data$AREA_S_CD <- as.numeric(sh@data$AREA_S_CD)
 # create a new dataframe inclduing only the ICU patients
